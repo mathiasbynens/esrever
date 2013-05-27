@@ -1,7 +1,4 @@
-# Esrever
-
-[![Build status](https://travis-ci.org/mathiasbynens/esrever.png?branch=master)](https://travis-ci.org/mathiasbynens/esrever)
-[![Dependency status](https://gemnasium.com/mathiasbynens/esrever.png)](https://gemnasium.com/mathiasbynens/esrever)
+# Esrever [![Build status](https://travis-ci.org/mathiasbynens/esrever.png?branch=master)](https://travis-ci.org/mathiasbynens/esrever) [![Dependency status](https://gemnasium.com/mathiasbynens/esrever.png)](https://gemnasium.com/mathiasbynens/esrever)
 
 _Esrever_ is a Unicode-aware string reverser written in JavaScript. It allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine.
 
@@ -13,7 +10,7 @@ The following code snippet is commonly used to reverse a string in JavaScript:
 // Don’t use this!
 var naiveReverse = function(string) {
 	return string.split('').reverse().join('');
-}
+};
 ```
 
 However, there are some problems with this solution. For example:
