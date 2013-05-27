@@ -1,0 +1,72 @@
+.Dd May 27, 2013
+.Dt esrever 1
+.Sh NAME
+.Nm esrever
+.Nd reverse strings
+.Sh SYNOPSIS
+.Nm
+.Op Fl f | -file Ar file
+.br
+.Op Fl l | -line Ar file
+.br
+.Op Fl v | -version
+.br
+.Op Fl h | -help
+.Sh DESCRIPTION
+.Nm
+is a Unicode-aware string reverser written in JavaScript. It's similar to
+.Xr rev 1
+, only better;
+.Nm
+allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine.
+.Sh OPTIONS
+.Bl -ohang -offset
+.It Sy "-v, --version"
+Print esrever's version.
+.It Sy "-h, --help"
+Show the help screen.
+.It Sy "-f, --file <file>"
+Print the reversed contents of the given file. Line order is reversed, too.
+.It Sy "-l, --lines <file>"
+Print the reversed contents of the given file. Line order is not reversed.
+.El
+.Sh EXIT STATUS
+The
+.Nm esrever
+utility exits with one of the following values:
+.Pp
+.Bl -tag -width flag -compact
+.It Li 0
+.Nm
+successfully reversed the input and printed the result.
+.It Li 1
+.Nm
+wasn't instructed to reverse any input (for example, the
+.Ar --help
+flag was set); or, an error occurred.
+.El
+.Sh EXAMPLES
+.Bl -ohang -offset
+.It Sy "esrever 'Hello world!'"
+Print the reversed version of the given string.
+.It Sy "esrever -f foo.txt"
+Read the file
+.Ar foo.txt
+and print its reversed contents, reversing line order as well.
+.It Sy "esrever -l foo.txt"
+Read the file
+.Ar foo.txt
+and print its reversed contents, without reversing line order. This is similar to what
+.Xr rev 1
+does.
+.It Sy echo\ 'Lorem\ ipsum'\ |\ esrever
+Print the reversed version of the string that gets piped in.
+.El
+.Sh SEE ALSO
+.Xr rev 1
+.Sh BUGS
+esrever's bug tracker is located at <https://github.com/mathiasbynens/esrever/issues>.
+.Sh AUTHOR
+Mathias Bynens <http://mathiasbynens.be/>
+.Sh WWW
+<http://mths.be/esrever>
