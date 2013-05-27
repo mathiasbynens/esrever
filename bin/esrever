@@ -1,0 +1,103 @@
+#!/usr/bin/env node
+
+(function() {
+
+	var fs = require('fs');
+	var esrever = require('../esrever.js');
+	var reverse = esrever.reverse;
+	var strings = process.argv.splice(2);
+	var option = strings.shift();
+	var isFile = false;
+	var maintainLineOrder = false;
+	var stdin = process.stdin;
+	var data;
+	var log = console.log;
+	var main = function() {
+
+		if (/^(?:-h|--help)$/.test(option) || option == null && !strings.length) {
+			log('esrever v%s - http://mths.be/esrever', esrever.version);
+			log('\nUsage:\n');
+			log('\tesrever [string ...]');
+			log('\tesrever [-f | --file] [file ...]');
+			log('\tesrever [-l | --lines] [file ...]');
+			log('\tesrever [-v | --version]');
+			log('\tesrever [-h | --help]');
+			log('\nExamples:\n');
+			log('\tesrever \'ma\xF1ana man\u0303ana\'');
+			log('\tesrever -f foo.txt');
+			log('\tesrever -l foo.txt');
+			log('\techo \'I put my thang down, flip it, and reverse it.\' | esrever');
+			log('\n\n\tesrever "H\u0339\u0319\u0326\u032E\u0349\u0329\u0317\u0317\u0367\u0307\u030F\u030A\u033EE\u0368\u0346\u0352\u0306\u036E\u0303\u034F\u0337\u032E\u0323\u032B\u0324\u0323 \u0335\u031E\u0339\u033B\u0300\u0309\u0313\u036C\u0351\u0361\u0345C\u036F\u0302\u0350\u034F\u0328\u031B\u0354\u0326\u031F\u0348\u033BO\u031C\u034E\u034D\u0359\u035A\u032C\u031D\u0323\u033D\u036E\u0350\u0357\u0300\u0364\u030D\u0300\u0362M\u0334\u0321\u0332\u032D\u034D\u0347\u033C\u031F\u032F\u0326\u0309\u0312\u0360\u1E1A\u031B\u0319\u031E\u032A\u0317\u0365\u0364\u0369\u033E\u0351\u0314\u0350\u0345\u1E6E\u0334\u0337\u0337\u0317\u033C\u034D\u033F\u033F\u0313\u033D\u0350H\u0319\u0319\u0314\u0304\u035C"\n\n');
+			return process.exit(1);
+		}
+
+		if (/^(?:-v|--version)$/.test(option)) {
+			log('v%s', esrever.version);
+			return process.exit(1);
+		}
+
+		if (/^(?:-f|--file)$/.test(option)) {
+			isFile = true;
+		} else if (/^(?:-l|--lines)$/.test(option)) {
+			maintainLineOrder = true;
+			isFile = true; // TODO: enable this option for strings too
+		} else {
+			// The first argument is not a recognized option; treat it as a string
+			option && strings.unshift(option);
+		}
+
+		if (!strings.length) {
+			log('Error: option `%s` requires an argument.', option);
+			log('Try `esrever --help` for more information.');
+			return process.exit(1);
+		}
+
+		strings.forEach(function(string) {
+			var result;
+			if (isFile) {
+				try {
+					string = fs.readFileSync(string, 'utf8');
+				} catch(error) {
+					log('Error: no such file. (`%s`)', string);
+					return process.exit(1);
+				}
+			}
+			try {
+				if (maintainLineOrder) {
+					result = string.split(/\r\n?|\n/g).map(function(line) {
+						return reverse(line);
+					}).join(require('os').EOL);
+				} else {
+					result = reverse(string);
+				}
+				log(result);
+			} catch(error) {
+				log('Error: failed to reverse.');
+				log('If you think this is a bug in esrever, please report it:');
+				log('https://github.com/mathiasbynens/esrever/issues/new')
+				return process.exit(1);
+			}
+		});
+		// Return with exit status 0 outside of the `forEach` loop, in case
+		// multiple strings or files were passed in.
+		return process.exit(0);
+
+	};
+
+	if (stdin.isTTY) {
+		// handle shell arguments
+		main();
+	} else {
+		// handle pipe
+		data = '';
+		stdin.on('data', function(chunk) {
+			data += chunk;
+		});
+		stdin.on('end', function() {
+			strings.unshift(data.trim());
+			main();
+		});
+		stdin.resume();
+	}
+
+}());

@@ -1,0 +1,5 @@
+.*
+*.md
+coverage
+tests
+Gruntfile.js
