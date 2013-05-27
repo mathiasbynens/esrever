@@ -26,8 +26,8 @@ If you’re wondering why this happens, [read up on JavaScript’s internal char
 But there’s more:
 
 ```js
-naiveReverse('mañana mañana');
-// → 'anãnam anañam'
+naiveReverse('mañana mañana');
+// → 'anãnam anañam'
 // Wait, so now the tilde is applied to the `a` instead of the `n`? WAT.
 ```
 
@@ -99,7 +99,7 @@ var reversed = esrever.reverse(input);
 console.log(reversed);
 // → '.teͨ͆ma tis rolod 𝌆 muspi meroL'
 
-reverse(reversed) == input;
+esrever.reverse(reversed) == input;
 // → true
 ```
 
@@ -136,15 +136,15 @@ $ esrever -l foo.txt
 Why not just use the good old `rev` command instead? Glad you asked. `rev` doesn’t account for Unicode combining marks:
 
 ```bash
-$ rev <<< 'mañana mañana'
-anãnam anañam
+$ rev <<< 'mañana mañana'
+anãnam anañam
 ```
 
 On the other hand, the `esrever` binary returns the expected result:
 
 ```
-$ esrever 'mañana mañana'
-anañam anañam
+$ esrever 'mañana mañana'
+anañam anañam
 ```
 
 See `esrever --help` for the full list of options.
