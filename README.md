@@ -9,7 +9,7 @@ The following code snippet is commonly used to reverse a string in JavaScript:
 ```js
 // Don’t use this!
 var naiveReverse = function(string) {
-	return string.split('').reverse().join('');
+  return string.split('').reverse().join('');
 };
 ```
 
@@ -99,7 +99,7 @@ var reversed = esrever.reverse(input);
 console.log(reversed);
 // → '.teͨ͆ma tis rolod 𝌆 muspi meroL'
 
-reverse(reversed) == input;
+esrever.reverse(reversed) == input;
 // → true
 ```
 
