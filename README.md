@@ -149,6 +149,10 @@ anañam anañam
 
 See `esrever --help` for the full list of options.
 
+## Support
+
+Esrever has been tested in at least Chrome 27-29, Firefox 3-22, Safari 4-6, Opera 10-12, IE 6-10, Node.js v0.10.0, Narwhal 0.3.2, RingoJS 0.8-0.9, PhantomJS 1.9.0, and Rhino 1.7RC4.
+
 ## Unit tests & code coverage
 
 After cloning this repository, run `npm install` to install the dependencies needed for Esrever development and testing. You may want to install Istanbul _globally_ using `npm install istanbul -g`.

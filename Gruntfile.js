@@ -1,15 +1,6 @@
 module.exports = function(grunt) {
 
-	var commandOptions = {
-		'stdout': true,
-		'stderr': true,
-		'failOnError': true
-	};
-
 	grunt.initConfig({
-		'meta': {
-			'testFile': 'tests/tests.js'
-		},
 		'shell': {
 			'options': {
 				'stdout': true,
@@ -17,7 +8,13 @@ module.exports = function(grunt) {
 				'failOnError': true
 			},
 			'cover': {
-				'command': 'istanbul cover --report "html" --verbose --dir "coverage" "<%= meta.testFile %>"'
+				'command': 'istanbul cover --report "html" --verbose --dir "coverage" "tests/tests.js"'
+			},
+			'test-narwhal': {
+				'command': 'echo "Testing in Narwhal..."; export NARWHAL_OPTIMIZATION=-1; narwhal "tests/tests.js"'
+			},
+			'test-phantomjs': {
+				'command': 'echo "Testing in PhantomJS..."; phantomjs "tests/tests.js"'
 			},
 			// Rhino 1.7R4 has a bug that makes it impossible to test Esrever.
 			// https://bugzilla.mozilla.org/show_bug.cgi?id=775566
@@ -31,13 +28,10 @@ module.exports = function(grunt) {
 				}
 			},
 			'test-ringo': {
-				'command': 'echo "Testing in Ringo..."; ringo -o -1 "<%= meta.testFile %>"'
-			},
-			'test-narwhal': {
-				'command': 'echo "Testing in Narwhal..."; export NARWHAL_OPTIMIZATION=-1; narwhal "<%= meta.testFile %>"'
+				'command': 'echo "Testing in Ringo..."; ringo -o -1 "tests/tests.js"'
 			},
 			'test-node': {
-				'command': 'echo "Testing in Node..."; node "<%= meta.testFile %>"'
+				'command': 'echo "Testing in Node..."; node "tests/tests.js"'
 			},
 			'test-browser': {
 				'command': 'echo "Testing in a browser..."; open "tests/index.html"'
@@ -61,9 +55,10 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('cover', 'shell:cover');
 	grunt.registerTask('test', [
+		'shell:test-narwhal',
+		'shell:test-phantomjs',
 		'shell:test-rhino',
 		'shell:test-ringo',
-		'shell:test-narwhal',
 		'shell:test-node',
 		'shell:test-browser'
 	]);
