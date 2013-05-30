@@ -1,0 +1,16 @@
+{
+	"name": "esrever",
+	"version": "0.1.0",
+	"main": "esrever.js",
+	"ignore": [
+		"bin",
+		"coverage",
+		"man",
+		"src",
+		"tests",
+		".*",
+		"Gruntfile.js",
+		"package.json",
+		"node_modules"
+	]
+}
