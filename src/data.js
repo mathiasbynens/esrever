@@ -1,5 +1,4 @@
 var regenerate = require('regenerate');
-var _ = require('lodash');
 
 // Start with all Unicode code points
 var any = regenerate.range(0x000000, 0x10FFFF);
@@ -14,7 +13,7 @@ var combiningMarks = regenerate.ranges([
 ]);
 
 // All code points except those that map to combining marks
-var allExceptCombiningMarks = _.difference(any, combiningMarks);
+var allExceptCombiningMarks = regenerate.difference(any, combiningMarks);
 
 module.exports = {
 	'combiningMarks': regenerate.fromCodePoints(combiningMarks),
