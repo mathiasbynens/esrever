@@ -2,3 +2,10 @@ language: node_js
 node_js:
   - "0.10"
   - "0.8"
+env:
+  - TEST_COMMAND="grunt shell:test-node"
+  - TEST_COMMAND="grunt shell:test-phantomjs"
+before_script:
+  - "npm install -g grunt-cli"
+script:
+  $TEST_COMMAND
