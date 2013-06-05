@@ -1,4 +1,5 @@
 var regenerate = require('regenerate');
+var fs = require('fs');
 
 // Start with all Unicode code points
 var any = regenerate.range(0x000000, 0x10FFFF);
@@ -19,5 +20,6 @@ module.exports = {
 	'combiningMarks': regenerate.fromCodePoints(combiningMarks),
 	'allExceptCombiningMarks': regenerate.fromCodePoints(allExceptCombiningMarks),
 	'highSurrogates': regenerate.fromCodePointRange(0xD800, 0xDBFF),
-	'lowSurrogates': regenerate.fromCodePointRange(0xDC00, 0xDFFF)
+	'lowSurrogates': regenerate.fromCodePointRange(0xDC00, 0xDFFF),
+	'version': JSON.parse(fs.readFileSync('package.json', 'utf8')).version
 };

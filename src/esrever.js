@@ -1,4 +1,4 @@
-/*! http://mths.be/esrever v0.1.0 by @mathias */
+/*! http://mths.be/esrever v<%= version %> by @mathias */
 ;(function(root) {
 
 	// Detect free variables `exports`
@@ -43,7 +43,7 @@
 	/*--------------------------------------------------------------------------*/
 
 	var esrever = {
-		'version': '0.1.0',
+		'version': '<%= version %>',
 		'reverse': reverse
 	};
 
