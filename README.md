@@ -40,16 +40,28 @@ And indeed: by swapping the position of any combining marks with the symbol they
 
 ## Installation
 
-In a browser:
-
-```html
-<script src="esrever.js"></script>
-```
-
 Via [npm](http://npmjs.org/):
 
 ```bash
 npm install esrever
+```
+
+Via [Bower](http://bower.io/):
+
+```bash
+bower install esrever
+```
+
+Via [Component](https://github.com/component/component):
+
+```bash
+component install mathiasbynens/esrever
+```
+
+In a browser:
+
+```html
+<script src="esrever.js"></script>
 ```
 
 In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):

@@ -1,0 +1,15 @@
+{
+	"name": "esrever",
+	"version": "0.1.0",
+	"description": "A fully Unicode-aware string reverser written in JavaScript.",
+	"repo": "mathiasbynens/esrever",
+	"license": "MIT/GPL",
+	"scripts": [
+		"esrever.js"
+	],
+	"keywords": [
+		"string",
+		"reverse",
+		"unicode"
+	]
+}
