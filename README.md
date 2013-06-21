@@ -1,6 +1,6 @@
 # Esrever [![Build status](https://travis-ci.org/mathiasbynens/esrever.png?branch=master)](https://travis-ci.org/mathiasbynens/esrever) [![Dependency status](https://gemnasium.com/mathiasbynens/esrever.png)](https://gemnasium.com/mathiasbynens/esrever)
 
-_Esrever_ is a Unicode-aware string reverser written in JavaScript. It allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine.
+_Esrever_ is a Unicode-aware string reverser written in JavaScript. It allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine. [Here’s an online demo.](http://mothereff.in/reverse-string)
 
 ## Why not just use `string.split('').reverse().join('')`?
 
