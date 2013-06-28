@@ -41,7 +41,9 @@ module.exports = function(grunt) {
 			'build-esrever': {
 				'options': {
 					// Generate the regular expressions dynamically using Regenerate
-					'data': require('./src/data.js')
+					'data': function() {
+						return require('./src/data.js');
+					}
 				},
 				'files': {
 					'esrever.js': ['src/esrever.js']

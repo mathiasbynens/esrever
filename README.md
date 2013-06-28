@@ -181,4 +181,4 @@ To generate [the code coverage report](http://rawgithub.com/mathiasbynens/esreve
 
 ## License
 
-Esrever is dual licensed under the [MIT](http://mths.be/mit) and [GPL](http://mths.be/gpl) licenses.
+Esrever is available under the [MIT](http://mths.be/mit) license.
