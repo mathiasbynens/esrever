@@ -39,12 +39,13 @@
 	"dependencies": {},
 	"devDependencies": {
 		"grunt": "~0.4.1",
-		"grunt-shell": "~0.2.2",
-		"grunt-template": "~0.2.0",
-		"istanbul": "~0.1.36",
+		"grunt-shell": "~0.5.0",
+		"grunt-template": "~0.2.1",
+		"istanbul": "~0.1.44",
 		"qunit-clib": "~1.3.0",
 		"qunitjs": "~1.11.0",
-		"regenerate": "~0.5.0",
-		"requirejs": "~2.1.6"
+		"regenerate": "~0.5.4",
+		"requirejs": "~2.1.9",
+		"unicode-6.3.0": "~0.1.0"
 	}
 }

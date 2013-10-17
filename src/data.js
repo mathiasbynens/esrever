@@ -1,25 +1,34 @@
 var regenerate = require('regenerate');
 var fs = require('fs');
 
-// Start with all Unicode code points
-var any = regenerate.range(0x000000, 0x10FFFF);
+var packageInfo = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
-// Disallow combining marks
-// Using Unicode 6.2.0 blocks: http://unicode.org/Public/6.2.0/ucd/Blocks.txt
-var combiningMarks = regenerate.ranges([
-	[0x0300, 0x036F], // Combining Diacritical Marks
-	[0x1DC0, 0x1DFF], // Combining Diacritical Marks Supplement
-	[0x20D0, 0x20FF], // Combining Diacritical Marks for Symbols
-	[0xFE20, 0xFE2F]  // Combining Half Marks
-]);
+// TODO: Use `Array#find` for this as soon as it lands in V8/Node
+var unicodePackage = Object.keys(packageInfo.devDependencies).filter(function(key) {
+	return /^unicode-/.test(key);
+})[0];
+
+function getBlock(name) {
+	return require(unicodePackage + '/blocks/' + name + '/code-points');
+}
+
+// All types of combining marks
+var combiningMarks = regenerate(
+	getBlock('Combining Diacritical Marks'),
+	getBlock('Combining Diacritical Marks Supplement'),
+	getBlock('Combining Diacritical Marks for Symbols'),
+	getBlock('Combining Half Marks')
+);
 
 // All code points except those that map to combining marks
-var allExceptCombiningMarks = regenerate.difference(any, combiningMarks);
+var allExceptCombiningMarks = regenerate()
+	.addRange(0x000000, 0x10FFFF)
+	.remove(combiningMarks.toArray());
 
 module.exports = {
-	'combiningMarks': regenerate.fromCodePoints(combiningMarks),
-	'allExceptCombiningMarks': regenerate.fromCodePoints(allExceptCombiningMarks),
+	'combiningMarks': combiningMarks.toString(),
+	'allExceptCombiningMarks': allExceptCombiningMarks.toString(),
 	'highSurrogates': regenerate.fromCodePointRange(0xD800, 0xDBFF),
 	'lowSurrogates': regenerate.fromCodePointRange(0xDC00, 0xDFFF),
-	'version': JSON.parse(fs.readFileSync('package.json', 'utf8')).version
+	'version': packageInfo.version
 };
