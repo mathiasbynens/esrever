@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 				'options': {
 					// Generate the regular expressions dynamically using Regenerate
 					'data': function() {
-						return require('./src/data.js');
+						return require('./scripts/export-data.js');
 					}
 				},
 				'files': {
