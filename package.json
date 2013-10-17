@@ -28,6 +28,12 @@
 	"bugs": {
 		"url": "https://github.com/mathiasbynens/esrever/issues"
 	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"esrever.js",
+		"bin/",
+		"man/"
+	],
 	"directories": {
 		"bin": "bin",
 		"man": "man",
