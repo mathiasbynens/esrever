@@ -1,4 +1,4 @@
-# Esrever [![Build status](https://travis-ci.org/mathiasbynens/esrever.png?branch=master)](https://travis-ci.org/mathiasbynens/esrever) [![Dependency status](https://gemnasium.com/mathiasbynens/esrever.png)](https://gemnasium.com/mathiasbynens/esrever)
+# Esrever [![Build status](https://travis-ci.org/mathiasbynens/esrever.svg?branch=master)](https://travis-ci.org/mathiasbynens/esrever) [![Dependency status](https://gemnasium.com/mathiasbynens/esrever.svg)](https://gemnasium.com/mathiasbynens/esrever)
 
 _Esrever_ is a Unicode-aware string reverser written in JavaScript. It allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine. [Here’s an online demo.](http://mothereff.in/reverse-string)
 
@@ -175,7 +175,7 @@ To generate [the code coverage report](http://rawgithub.com/mathiasbynens/esreve
 
 ## Author
 
-| [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
+| [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
 | [Mathias Bynens](http://mathiasbynens.be/) |
 
