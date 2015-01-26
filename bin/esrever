@@ -15,7 +15,7 @@
 	var main = function() {
 
 		if (/^(?:-h|--help)$/.test(option) || option == null && !strings.length) {
-			log('esrever v%s - http://mths.be/esrever', esrever.version);
+			log('esrever v%s - https://mths.be/esrever', esrever.version);
 			log('\nUsage:\n');
 			log('\tesrever [string ...]');
 			log('\tesrever [-f | --file] [file ...]');

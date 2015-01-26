@@ -1,6 +1,6 @@
-# Esrever [![Build status](https://travis-ci.org/mathiasbynens/esrever.svg?branch=master)](https://travis-ci.org/mathiasbynens/esrever) [![Dependency status](https://gemnasium.com/mathiasbynens/esrever.svg)](https://gemnasium.com/mathiasbynens/esrever)
+# Esrever [![Build status](https://travis-ci.org/mathiasbynens/esrever.svg?branch=master)](https://travis-ci.org/mathiasbynens/esrever) [![Code coverage status](https://coveralls.io/repos/mathiasbynens/esrever/badge.svg)](https://coveralls.io/r/mathiasbynens/esrever) [![Dependency status](https://gemnasium.com/mathiasbynens/esrever.svg)](https://gemnasium.com/mathiasbynens/esrever)
 
-_Esrever_ is a Unicode-aware string reverser written in JavaScript. It allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine. [Here’s an online demo.](http://mothereff.in/reverse-string)
+_Esrever_ is a Unicode-aware string reverser written in JavaScript. It allows you to easily reverse any string of Unicode symbols, while handling combining marks and astral symbols just fine. [Here’s an online demo.](https://mothereff.in/reverse-string)
 
 ## Why not just use `string.split('').reverse().join('')`?
 
@@ -21,7 +21,7 @@ naiveReverse('foo 𝌆 bar');
 // Where did the `𝌆` symbol go? Whoops!
 ```
 
-If you’re wondering why this happens, [read up on JavaScript’s internal character encoding](http://mathiasbynens.be/notes/javascript-encoding).
+If you’re wondering why this happens, [read up on JavaScript’s internal character encoding](https://mathiasbynens.be/notes/javascript-encoding).
 
 But there’s more:
 
@@ -40,7 +40,7 @@ And indeed: by swapping the position of any combining marks with the symbol they
 
 ## Installation
 
-Via [npm](http://npmjs.org/):
+Via [npm](https://www.npmjs.com/):
 
 ```bash
 npm install esrever
@@ -64,7 +64,7 @@ In a browser:
 <script src="esrever.js"></script>
 ```
 
-In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):
+In [Narwhal](http://narwhaljs.org/), [Node.js](https://nodejs.org/), and [RingoJS](http://ringojs.org/):
 
 ```js
 var esrever = require('esrever');
@@ -163,7 +163,7 @@ See `esrever --help` for the full list of options.
 
 ## Support
 
-Esrever has been tested in at least Chrome 27-29, Firefox 3-22, Safari 4-6, Opera 10-12, IE 6-10, Node.js v0.10.0, Narwhal 0.3.2, RingoJS 0.8-0.9, PhantomJS 1.9.0, and Rhino 1.7RC4.
+Esrever has been tested in at least Chrome 27-29, Firefox 3-22, Safari 4-6, Opera 10-12, IE 6-10, Node.js v0.10.0, io.js v1.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, and Rhino 1.7RC4.
 
 ## Unit tests & code coverage
 
@@ -171,14 +171,14 @@ After cloning this repository, run `npm install` to install the dependencies nee
 
 Once that’s done, you can run the unit tests in Node using `npm test` or `node tests/tests.js`. To run the tests in Rhino, Ringo, Narwhal, and web browsers as well, use `grunt test`.
 
-To generate [the code coverage report](http://rawgithub.com/mathiasbynens/esrever/master/coverage/esrever/esrever.js.html), use `grunt cover`.
+To generate the code coverage report, use `grunt cover`.
 
 ## Author
 
 | [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
-| [Mathias Bynens](http://mathiasbynens.be/) |
+| [Mathias Bynens](https://mathiasbynens.be/) |
 
 ## License
 
-Esrever is available under the [MIT](http://mths.be/mit) license.
+Esrever is available under the [MIT](https://mths.be/mit) license.

@@ -26,7 +26,5 @@ var allExceptCombiningMarks = regenerate()
 module.exports = {
 	'combiningMarks': combiningMarks.toString(),
 	'allExceptCombiningMarks': allExceptCombiningMarks.toString(),
-	'highSurrogates': regenerate().addRange(0xD800, 0xDBFF).toString(),
-	'lowSurrogates': regenerate().addRange(0xDC00, 0xDFFF).toString(),
 	'version': packageInfo.version
 };

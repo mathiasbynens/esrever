@@ -1,4 +1,4 @@
-/*! http://mths.be/esrever v<%= version %> by @mathias */
+/*! https://mths.be/esrever v<%= version %> by @mathias */
 ;(function(root) {
 
 	// Detect free variables `exports`
@@ -18,7 +18,7 @@
 	/*--------------------------------------------------------------------------*/
 
 	var regexSymbolWithCombiningMarks = /(<%= allExceptCombiningMarks %>)(<%= combiningMarks %>+)/g;
-	var regexSurrogatePair = /(<%= highSurrogates %>)(<%= lowSurrogates %>)/g;
+	var regexSurrogatePair = /([\uD800-\uDBFF])([\uDC00-\uDFFF])/g;
 
 	var reverse = function(string) {
 		// Step 1: deal with combining marks and astral symbols (surrogate pairs)

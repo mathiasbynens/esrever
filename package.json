@@ -2,7 +2,7 @@
 	"name": "esrever",
 	"version": "0.1.0",
 	"description": "A fully Unicode-aware string reverser written in JavaScript.",
-	"homepage": "http://mths.be/esrever",
+	"homepage": "https://mths.be/esrever",
 	"main": "esrever.js",
 	"bin": "bin/esrever",
 	"man": "man/esrever.1",
@@ -11,23 +11,16 @@
 		"reverse",
 		"unicode"
 	],
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://mths.be/mit"
-		}
-	],
+	"license": "MIT",
 	"author": {
 		"name": "Mathias Bynens",
-		"url": "http://mathiasbynens.be/"
+		"url": "https://mathiasbynens.be/"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mathiasbynens/esrever.git"
 	},
-	"bugs": {
-		"url": "https://github.com/mathiasbynens/esrever/issues"
-	},
+	"bugs": "https://github.com/mathiasbynens/esrever/issues",
 	"files": [
 		"LICENSE-MIT.txt",
 		"esrever.js",
@@ -42,16 +35,16 @@
 	"scripts": {
 		"test": "node tests/tests.js"
 	},
-	"dependencies": {},
 	"devDependencies": {
-		"grunt": "~0.4.4",
-		"grunt-shell": "~0.6.4",
-		"grunt-template": "~0.2.3",
-		"istanbul": "~0.2.7",
-		"qunit-extras": "~1.0.0",
+		"coveralls": "^2.11.2",
+		"grunt": "^0.4.5",
+		"grunt-shell": "^1.1.1",
+		"grunt-template": "^0.2.3",
+		"istanbul": "^0.3.5",
+		"qunit-extras": "^1.4.1",
 		"qunitjs": "~1.11.0",
-		"regenerate": "~0.6.0",
-		"requirejs": "~2.1.11",
-		"unicode-6.3.0": "~0.1.2"
+		"regenerate": "^1.1.0",
+		"requirejs": "^2.1.15",
+		"unicode-7.0.0": "^0.1.5"
 	}
 }
