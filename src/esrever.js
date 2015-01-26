@@ -58,7 +58,7 @@
 			return esrever;
 		});
 	}	else if (freeExports && !freeExports.nodeType) {
-		if (freeModule) { // in Node.js or RingoJS v0.8.0+
+		if (freeModule) { // in Node.js, io.js, or RingoJS v0.8.0+
 			freeModule.exports = esrever;
 		} else { // in Narwhal or RingoJS v0.7.0-
 			for (var key in esrever) {

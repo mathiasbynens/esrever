@@ -1,6 +1,6 @@
 {
 	"name": "esrever",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A fully Unicode-aware string reverser written in JavaScript.",
 	"homepage": "https://mths.be/esrever",
 	"main": "esrever.js",

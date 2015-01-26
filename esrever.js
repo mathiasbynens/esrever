@@ -1,4 +1,4 @@
-/*! https://mths.be/esrever v0.1.0 by @mathias */
+/*! https://mths.be/esrever v0.2.0 by @mathias */
 ;(function(root) {
 
 	// Detect free variables `exports`
@@ -43,7 +43,7 @@
 	/*--------------------------------------------------------------------------*/
 
 	var esrever = {
-		'version': '0.1.0',
+		'version': '0.2.0',
 		'reverse': reverse
 	};
 
@@ -58,7 +58,7 @@
 			return esrever;
 		});
 	}	else if (freeExports && !freeExports.nodeType) {
-		if (freeModule) { // in Node.js or RingoJS v0.8.0+
+		if (freeModule) { // in Node.js, io.js, or RingoJS v0.8.0+
 			freeModule.exports = esrever;
 		} else { // in Narwhal or RingoJS v0.7.0-
 			for (var key in esrever) {
