@@ -45,6 +45,6 @@
 		"qunitjs": "~1.11.0",
 		"regenerate": "^1.1.0",
 		"requirejs": "^2.1.15",
-		"unicode-7.0.0": "^0.1.5"
+		"unicode-8.0.0": "^0.1.5"
 	}
 }
