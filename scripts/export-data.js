@@ -3,10 +3,9 @@ var fs = require('fs');
 
 var packageInfo = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 
-// TODO: Use `Array#find` for this as soon as it lands in V8/Node
-var unicodePackage = Object.keys(packageInfo.devDependencies).filter(function(key) {
+var unicodePackage = Object.keys(packageInfo.devDependencies).find(function(key) {
 	return /^unicode-/.test(key);
-})[0];
+});
 
 // All types of combining marks
 var combiningMarks = regenerate();
