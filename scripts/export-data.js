@@ -9,10 +9,10 @@ var unicodePackage = Object.keys(packageInfo.devDependencies).find(function(key)
 
 // All types of combining marks
 var combiningMarks = regenerate();
-require(unicodePackage).blocks.forEach(function(block) {
+require(unicodePackage).Block.forEach(function(block) {
 	if (/^Combining/.test(block)) {
 		combiningMarks.add(
-			require(unicodePackage + '/blocks/' + block + '/code-points')
+			require(unicodePackage + '/Block/' + block + '/code-points.js')
 		);
 	}
 });
